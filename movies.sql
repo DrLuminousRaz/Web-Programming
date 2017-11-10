@@ -1,0 +1,19 @@
+create database Movies;
+
+use Movies;
+
+CREATE TABLE films (
+	ID INTEGER NOT NULL AUTO_INCREMENT,
+	Title VARCHAR(100),Studio VARCHAR(100),Status VARCHAR(20),Sound VARCHAR(20),Version VARCHAR(100),RecRetPrice VARCHAR(10),Rating VARCHAR(10),Year INTEGER(4),Genre VARCHAR(20),Aspect VARCHAR(10),
+	PRIMARY KEY(ID)
+);
+
+LOAD DATA LOCAL INFILE 'c:/temp/Movies.csv' 
+INTO TABLE films 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+
+
